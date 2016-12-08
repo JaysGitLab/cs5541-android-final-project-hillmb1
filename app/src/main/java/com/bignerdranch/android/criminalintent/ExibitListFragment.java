@@ -1,7 +1,9 @@
 package com.bignerdranch.android.criminalintent;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,9 +15,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ExibitListFragment extends Fragment {
 
@@ -141,12 +149,33 @@ public class ExibitListFragment extends Fragment {
         updateSubtitle();
     }
 
+    /*public void sort(String gal) {
+        ExibitLab exibitLab = ExibitLab.get(getActivity());
+        List<Exibit> exibits = exibitLab.getExibits();
+        List<Exibit> temp = new ArrayList<>();
+        int index = 0;
+        for(int i = 0; i < exibits.size(); i++)
+        {
+            if (exibits.get(i). == )
+        }
+        if (mAdapter == null) {
+            mAdapter = new ExibitAdapter(exibits);
+            mCrimeRecyclerView.setAdapter(mAdapter);
+        } else {
+            mAdapter.setExibits(exibits);
+            mAdapter.notifyDataSetChanged();
+        }
+
+        updateSubtitle();
+    }*/
+
     private class ExibitHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
         private TextView mTitleTextView;
         private TextView mDateTextView;
         private CheckBox mSolvedCheckBox;
+        private ImageView mImage;
 
         private Exibit mExibit;
 
@@ -155,15 +184,20 @@ public class ExibitListFragment extends Fragment {
             itemView.setOnClickListener(this);
 
             mTitleTextView = (TextView) itemView.findViewById(R.id.list_item_crime_title_text_view);
-            mDateTextView = (TextView) itemView.findViewById(R.id.list_item_crime_date_text_view);
+            //mDateTextView = (TextView) itemView.findViewById(R.id.list_item_crime_date_text_view);
             mSolvedCheckBox = (CheckBox) itemView.findViewById(R.id.list_item_crime_solved_check_box);
+            mImage = (ImageView) itemView.findViewById(R.id.crime_photo2);
         }
 
         public void bindCrime(Exibit exibit) {
             mExibit = exibit;
             mTitleTextView.setText(mExibit.getTitle());
-            mDateTextView.setText(mExibit.getDate().toString());
+           // mDateTextView.setText(mExibit.getDate().toString());
             mSolvedCheckBox.setChecked(mExibit.isFaved());
+            File mPhotoFile = ExibitLab.get(getActivity()).getPhotoFile(mExibit);
+            Bitmap bitmap = PictureUtils.getScaledBitmap(
+            mPhotoFile.getPath(), getActivity());
+            mImage.setImageBitmap(bitmap);
         }
 
         @Override
@@ -183,7 +217,8 @@ public class ExibitListFragment extends Fragment {
         @Override
         public ExibitHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(R.layout.list_item_crime, parent, false);
+            View view = layoutInflater.
+                    inflate(R.layout.list_item_crime, parent, false);
             return new ExibitHolder(view);
         }
 

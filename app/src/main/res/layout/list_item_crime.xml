@@ -2,31 +2,56 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_dropdown_light_frame"
+                android:paddingBottom="10dp">
+    <TextView
+        android:id="@+id/list_item_crime_title_text_view3"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        tools:text="Gallery"
+        android:padding="4dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/list_item_crime_title_text_view2"
+        android:layout_alignLeft="@+id/list_item_crime_title_text_view2"
+        android:layout_alignStart="@+id/list_item_crime_title_text_view2"
+        android:layout_marginTop="12dp"/>
+    <TextView
+        android:id="@+id/list_item_crime_title_text_view2"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        tools:text="Creator"
+        android:padding="4dp"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20dp" android:layout_marginStart="20dp"
+        android:layout_below="@+id/list_item_crime_title_text_view"
+        android:layout_toRightOf="@+id/crime_photo2" android:layout_toEndOf="@+id/crime_photo2"
+        android:layout_marginTop="11dp"/>
     <CheckBox
         android:id="@+id/list_item_crime_solved_check_box"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:padding="4dp"/>
-
     <TextView
         android:id="@+id/list_item_crime_title_text_view"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/list_item_crime_solved_check_box"
-        android:textStyle="bold"
-        tools:text="Crime Title"
-        android:padding="4dp"/>
+        tools:text="Title"
+        android:padding="4dp"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@+id/crime_photo2"
+        android:layout_alignLeft="@+id/list_item_crime_title_text_view2"
+        android:layout_alignStart="@+id/list_item_crime_title_text_view2"
+        android:textStyle="bold"/>
+    <ImageView android:id="@+id/crime_photo2"
+               android:layout_height="100dp"
+               android:scaleType="fitXY"
+               android:background="@android:color/darker_gray"
+               android:cropToPadding="true"
+               android:adjustViewBounds="true" android:layout_width="60dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginStart="20dp"
+               android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+               android:layout_alignParentStart="true"/>
 
-    <TextView
-        android:id="@+id/list_item_crime_date_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/list_item_crime_solved_check_box"
-        android:layout_below="@id/list_item_crime_title_text_view"
-        tools:text="Crime Date"
-        android:padding="4dp"/>
-    
 </RelativeLayout>

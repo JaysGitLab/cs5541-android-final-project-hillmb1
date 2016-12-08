@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CriminalIntent</string>
+    <string name="app_name">Pocket Turchin</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="crime_title_hint">Enter a title for the exibit.</string>
     <string name="crime_title_label">Title</string>
     <string name="crime_details_label">Details</string>
-    <string name="crime_solved_label">Solved</string>
-    <string name="date_picker_title">Date of exibit:</string>
-    <string name="new_crime">New Crime</string>
+    <string name="crime_solved_label">Favorite</string>
+    <string name="date_picker_title">Date of creation:</string>
+    <string name="new_crime">New Exibit</string>
     <string name="show_subtitle">Show Subtitle</string>
     <string name="hide_subtitle">Hide Subtitle</string>
     <string name="subtitle_format">%1$s exibits</string>
-    <string name="crime_suspect_text">Choose Suspect</string>
-    <string name="crime_report_text">Send Crime Report</string>
+    <string name="crime_suspect_text">Creator</string>
+    <string name="crime_report_text">Send Update</string>
     <string name="crime_report">%1$s!
-        The exibit was discovered on %2$s. %3$s, and %4$s
+        The exibit was uploaded on %2$s. %3$s, and %4$s
     </string>
-    <string name="crime_report_solved">The case is faved</string>
-    <string name="crime_report_unsolved">The case is not faved</string>
+    <string name="crime_report_solved">The exibit is faved</string>
+    <string name="crime_report_unsolved">The exibit is not faved</string>
     <string name="crime_report_no_suspect">there is no creator.</string>
     <string name="crime_report_suspect">the creator is %s.</string>
-    <string name="crime_report_subject">CriminalIntent Crime Report</string>
-    <string name="send_report">Send exibit report via</string>
+    <string name="crime_report_subject">Exibit List</string>
+    <string name="send_report">Send exibit update via</string>
 </resources>
