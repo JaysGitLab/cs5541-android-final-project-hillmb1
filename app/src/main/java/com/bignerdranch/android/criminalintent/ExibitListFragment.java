@@ -169,6 +169,7 @@ public class ExibitListFragment extends Fragment {
         updateSubtitle();
     }*/
 
+
     private class ExibitHolder extends RecyclerView.ViewHolder
             implements View.OnClickListener {
 
